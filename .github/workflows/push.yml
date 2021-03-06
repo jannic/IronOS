@@ -1,9 +1,13 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - build
 
 jobs:
   build_TS80:
+    if: false
     runs-on: ubuntu-latest
 
     steps:
@@ -46,6 +50,7 @@ jobs:
           if-no-files-found: error
   build_TS80P:
     runs-on: ubuntu-latest
+    if: false
 
     steps:
       - uses: actions/checkout@v2
@@ -86,6 +91,7 @@ jobs:
             source/Hexfile/LICENSE_RELEASE.md
           if-no-files-found: error
   build_TS100:
+    if: false
     runs-on: ubuntu-latest
 
     steps:
